@@ -18,4 +18,20 @@ class AdminController extends Controller
     {
         return view('admin.ui');
     }
+    public function chart()
+    {
+        return view('admin.chart');
+    }
+    public function tab()
+    {
+        return view('admin.tab');
+    }
+    public function table()
+    {
+        return view('admin.table');
+    }
+    public function form()
+    {
+        return view('admin.form');
+    }
 }

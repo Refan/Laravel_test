@@ -8,7 +8,6 @@
     
     {!!Html::style('/assets/css/bootstrap.css')!!}
     {!!Html::style('/assets/css/font-awesome.css')!!}
-    {!!Html::style('/assets/js/morris/morris-0.4.3.min.css')!!}
     {!!Html::style('/assets/css/custom-styles.css')!!}
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     @yield('style')
@@ -29,10 +28,8 @@
     {!!Html::script('/assets/js/jquery-1.10.2.js')!!}
     {!!Html::script('/assets/js/bootstrap.min.js')!!}
     {!!Html::script('/assets/js/jquery.metisMenu.js')!!}
-    {!!Html::script('/assets/js/morris/raphael-2.1.0.min.js')!!}
-    {!!Html::script('/assets/js/morris/morris.js')!!}
-    {!!Html::script('/assets/js/custom-scripts.js')!!}
     @yield('script')
+    {!!Html::script('/assets/js/custom-scripts.js')!!}
 </body>
 
 </html>

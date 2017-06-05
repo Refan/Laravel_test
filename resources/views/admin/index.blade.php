@@ -1,4 +1,9 @@
 @extends('layout.dashboard')
+
+@section('style')
+{!!Html::style('/assets/js/morris/morris-0.4.3.min.css')!!}
+@stop
+
 @section('content')  
         <div id="page-wrapper">
             <div id="page-inner">
@@ -209,4 +214,9 @@
             <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->
+@stop
+
+@section('script')
+{!!Html::script('/assets/js/morris/raphael-2.1.0.min.js')!!}
+{!!Html::script('/assets/js/morris/morris.js')!!}
 @stop
