@@ -18,3 +18,6 @@ Route::get('/chart',array('as'=>'chart','uses'=>'AdminController@chart'));
 Route::get('/tab',array('as'=>'tab','uses'=>'AdminController@tab'));
 Route::get('/table',array('as'=>'table','uses'=>'AdminController@table'));
 Route::get('/form',array('as'=>'form','uses'=>'AdminController@form'));
+Route::get('/emptys',array('as'=>'emptys','uses'=>'AdminController@emptys'));
+
+Route::get('/login',array('as'=>'login','uses'=>'AdminController@login'));

@@ -34,4 +34,13 @@ class AdminController extends Controller
     {
         return view('admin.form');
     }
+    public function emptys()
+    {
+        return view('admin.emptys');
+    }
+
+    public function login()
+    {
+        return view('admin.login');
+    }
 }
