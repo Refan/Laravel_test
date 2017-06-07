@@ -11,13 +11,27 @@
 |
 */
 
-Route::get('/',array('as'=>'index','uses'=>'AdminController@index'));
-Route::get('/index',array('as'=>'index','uses'=>'AdminController@index'));
-Route::get('/ui',array('as'=>'ui','uses'=>'AdminController@ui'));
-Route::get('/chart',array('as'=>'chart','uses'=>'AdminController@chart'));
-Route::get('/tab',array('as'=>'tab','uses'=>'AdminController@tab'));
-Route::get('/table',array('as'=>'table','uses'=>'AdminController@table'));
-Route::get('/form',array('as'=>'form','uses'=>'AdminController@form'));
-Route::get('/emptys',array('as'=>'emptys','uses'=>'AdminController@emptys'));
+Route::get('/',function(){
+    return view('welcome');
+});
 
-Route::get('/login',array('as'=>'login','uses'=>'AdminController@login'));
+// 認證路由...
+Route::get('auth/login',array('as'=>'login','uses'=>'Auth\AuthController@getLogin'));
+Route::post('auth/login',array('as'=>'login','uses'=>'Auth\AuthController@postLogin'));
+Route::get('auth/logout',array('as'=>'logout','uses'=>'Auth\AuthController@getLogout'));
+
+// 註冊路由...
+Route::get('auth/register',array('as'=>'register','uses'=>'Auth\AuthController@getRegister'));
+Route::post('auth/register',array('as'=>'register','uses'=>'Auth\AuthController@postRegister'));
+
+ 
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/home',array('as'=>'home','uses'=>'AdminController@home'));
+    Route::get('/ui',array('as'=>'ui','uses'=>'AdminController@ui'));
+    Route::get('/chart',array('as'=>'chart','uses'=>'AdminController@chart'));
+    Route::get('/tab',array('as'=>'tab','uses'=>'AdminController@tab'));
+    Route::get('/table',array('as'=>'table','uses'=>'AdminController@table'));
+    Route::get('/form',array('as'=>'form','uses'=>'AdminController@form'));
+    Route::get('/emptys',array('as'=>'emptys','uses'=>'AdminController@emptys'));
+    // Route::get('/login',array('as'=>'login','uses'=>'AdminController@login'));
+});

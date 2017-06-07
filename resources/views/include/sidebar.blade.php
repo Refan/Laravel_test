@@ -3,22 +3,22 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="/index"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" href="{!!URL::route('home')!!}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="/ui"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a href="{!!URL::route('ui')!!}"><i class="fa fa-desktop"></i> UI Elements</a>
                     </li>
 					<li>
-                        <a href="/chart"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a href="{!!URL::route('chart')!!}"><i class="fa fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="/tab"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="{!!URL::route('tab')!!}"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     <li>
-                        <a href="/table"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a href="{!!URL::route('table')!!}"><i class="fa fa-table"></i> Responsive Tables</a>
                     </li>
                     <li>
-                        <a href="/form"><i class="fa fa-edit"></i> Forms </a>
+                        <a href="{!!URL::route('form')!!}"><i class="fa fa-edit"></i> Forms </a>
                     </li>
 
 
@@ -50,7 +50,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                        <a href="{!!URL::route('emptys')!!}"><i class="fa fa-fw fa-file"></i> Empty Page</a>
                     </li>
                 </ul>
 

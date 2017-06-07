@@ -234,6 +234,7 @@ form button:hover {
   margin: 0 auto 10px auto;
 }
 
-.logo_img{
+.logo_img img{
   padding-bottom: 30px;
+  max-width: 300px;
 }

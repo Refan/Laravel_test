@@ -10,9 +10,9 @@ use App\Http\Controllers\Controller;
 class AdminController extends Controller
 {
     //
-    public function index()
+    public function home()
     {
-        return view('admin.index');
+        return view('admin.home');
     }
     public function ui()
     {
@@ -39,8 +39,8 @@ class AdminController extends Controller
         return view('admin.emptys');
     }
 
-    public function login()
-    {
-        return view('admin.login');
-    }
+    // public function login()
+    // {
+    //     return view('admin.login');
+    // }
 }
