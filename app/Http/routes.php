@@ -35,3 +35,12 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/emptys',array('as'=>'emptys','uses'=>'AdminController@emptys'));
     // Route::get('/login',array('as'=>'login','uses'=>'AdminController@login'));
 });
+
+
+// 密碼重置連結的路由...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// 密碼重置的路由...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');

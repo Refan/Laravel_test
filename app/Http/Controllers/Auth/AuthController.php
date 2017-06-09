@@ -62,4 +62,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    //客製化認證後，轉向的 URI
+    // protected $redirectPath = '/ui';
 }
