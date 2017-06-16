@@ -1,5 +1,7 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
+                <img src="http://hk.next.nextmedia.com/images/next-photos/NextMag/1209/640pixfolder/E1209_122_13830875.jpg" alt="金城武" class="img-responsive img-circle" style="max-width:120px;margin:auto auto">
+                <br>
                 <ul class="nav" id="main-menu">
 
                     <li>
