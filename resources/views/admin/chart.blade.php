@@ -57,7 +57,7 @@
                       <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Line Chartaacc
+                            Line Chart
                         </div>
                         <div class="panel-body">                            
 							<div id="morris-donut-chart"></div>
@@ -67,7 +67,7 @@
                 
            </div>
                  <!-- /. ROW  -->
-				 <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer>
+				 <footer><p>All right cd. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer>
 				</div>
              <!-- /. PAGE INNER  -->
             </div>
