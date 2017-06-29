@@ -17,7 +17,7 @@ Route::get('/',function(){
 
 // 認證路由...
 Route::get('auth/login',array('as'=>'login','uses'=>'Auth\AuthController@getLogin'));
-Route::post('auth/login',array('as'=>'login','uses'=>'Auth\AuthController@postLogin'));
+Route::post('auth/login',array('as'=>'login','uses'=>'Auth\AuthController@authenticate'));
 Route::get('auth/logout',array('as'=>'logout','uses'=>'Auth\AuthController@getLogout'));
 
 // 註冊路由...

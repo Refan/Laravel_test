@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Auth;
+use Illuminate\Http\Request;
+
 class AuthController extends Controller
 {
     /*
@@ -61,6 +64,29 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function authenticate(Request $request)
+    {
+        // $validator = Validator::make($request->all(), [
+        //     'email' => 'required|email|max:255|unique:users',
+        //     'password' => 'required|min:6',
+        // ]);
+        $post = $request->all();
+        if (Auth::attempt(['email' => $post['email'], 'password' => $post['password']])) {
+            // 認證通過...
+            return redirect()->intended('home');
+            // var_dump('success');exit;
+        }
+
+        var_dump('error');
+        exit;
+
+        if ($validator->fails()){
+            //驗證過會true    
+        }
+
+        
     }
 
     //客製化認證後，轉向的 URI
