@@ -21,7 +21,7 @@
 			<input type="email" placeholder="Username" name="email" value="{{ old('email') }}">
 			<input type="password" placeholder="Password" name="password" id="password">
 			<!--
-			<button class="g-recaptcha" data-sitekey="6Le0eCQUAAAAAHyEKFXoYyBl8JKolgt5iFWtfRVe" data-badge="inline" data-callback="onSubmit">Login</button>
+			<button class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_SITEKEY')}}" data-badge="inline" data-callback="onSubmit">Login</button>
 			-->
 			<button type="submit" id="login-button">Login</button>
 			

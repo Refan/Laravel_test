@@ -68,25 +68,47 @@ class AuthController extends Controller
 
     public function authenticate(Request $request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'email' => 'required|email|max:255|unique:users',
-        //     'password' => 'required|min:6',
-        // ]);
-        $post = $request->all();
-        if (Auth::attempt(['email' => $post['email'], 'password' => $post['password']])) {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required',
+            // 'g-recaptcha-response' => 'required',
+        ]);
+
+        if ($validator->fails())
+        {
+            var_dump($validator->errors());exit;
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
+        exit;
+
+        if (!$this->recaptcha_chk($_POST['g-recaptcha-response'])){
+            var_dump('error');
+            exit;
+        }
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // 認證通過...
             return redirect()->intended('home');
             // var_dump('success');exit;
         }
 
         var_dump('error');
-        exit;
-
-        if ($validator->fails()){
-            //驗證過會true    
-        }
-
-        
+        exit;   
+    }
+    
+    public function recaptcha_chk($recaptcha)      //檢查驗證碼
+    {
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+    	$post['secret'] = env('RECAPTCHA_SECRET');
+    	$post['response'] = $recaptcha;
+        $rs = file_get_contents($url.'?secret='.$post['secret'].'&response='.$post['response']);
+        $rs = json_decode($rs,true);
+        if ($rs['success']==true){
+    		return true;
+    	}else{
+			return false;
+    	}
     }
 
     //客製化認證後，轉向的 URI
